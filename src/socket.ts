@@ -17,7 +17,8 @@ export const webSocket = (httpServer: HTTPServer) => {
     io = new Server(httpServer, {
         cors: {
             origin: 'https://math-quiz-real-time.onrender.com',
-            credentials: true
+            methods: ['GET', 'POST'],
+            credentials: true,
         },
     });
 
