@@ -30,6 +30,7 @@ export const Home: React.FC<Props> = ({currUser}) => {
     useEffect(() => {
         socketRef.current = io(SOCKET_SERVER_URL, {
             query: { username: currUser },
+            transports: ['websocket'],
             withCredentials: true,
         });
         socketRef.current.on("new-question", (data) => {
