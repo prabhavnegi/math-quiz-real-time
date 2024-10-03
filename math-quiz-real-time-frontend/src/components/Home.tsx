@@ -24,7 +24,6 @@ export const Home: React.FC<Props> = ({currUser}) => {
 
     const [leaderboard, setLeaderboard] = useState<Leaderboard[]>([]);
 
-    
     const socketRef = useRef<Socket | null>(null);
 
     useEffect(() => {

@@ -7,11 +7,11 @@ import { webSocket } from "./socket";
 const app = express();
 
 const frontend = path.join(__dirname, '..', 'math-quiz-real-time-frontend', 'dist');
-app.use(express.static(frontend));
 const PORT = process.env.PORT || 3000;
 const httpServer = createServer(app);
 
 app.use(express.json());
+app.use(express.static(frontend));
 gameState.generateQuestion();
 
 webSocket(httpServer)
