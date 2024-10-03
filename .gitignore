@@ -34,27 +34,3 @@ coverage/
 # Temporary files
 *.tmp
 *.temp
-
-#frontend
-
-/math-quiz-real-time-frontend/logs
-/math-quiz-real-time-frontend/*.log
-/math-quiz-real-time-frontend/npm-debug.log*
-/math-quiz-real-time-frontend/yarn-debug.log*
-/math-quiz-real-time-frontend/yarn-error.log*
-/math-quiz-real-time-frontend/pnpm-debug.log*
-/math-quiz-real-time-frontend/lerna-debug.log*
-
-/math-quiz-real-time-frontend/node_modules
-/math-quiz-real-time-frontend/*.local
-
-# Editor directories and files
-/math-quiz-real-time-frontend/.vscode/*
-/math-quiz-real-time-frontend/!.vscode/extensions.json
-/math-quiz-real-time-frontend/.idea
-/math-quiz-real-time-frontend/.DS_Store
-/math-quiz-real-time-frontend/*.suo
-/math-quiz-real-time-frontend/*.ntvs*
-/math-quiz-real-time-frontend/*.njsproj
-/math-quiz-real-time-frontend/*.sln
-/math-quiz-real-time-frontend/*.sw?
