@@ -14,7 +14,7 @@ interface Leaderboard {
     lastCorrectAnswer: number,
 }
 
-const SOCKET_SERVER_URL = "http://localhost:3000"; 
+const SOCKET_SERVER_URL = "https://math-quiz-real-time.onrender.com"; 
 
 export const Home: React.FC<Props> = ({currUser}) => {
     const [question, setQuestion] = useState("");
