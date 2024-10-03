@@ -11,7 +11,15 @@ const PORT = process.env.PORT || 3000;
 const httpServer = createServer(app);
 
 app.use(express.json());
-app.use(express.static(frontend));
+app.use(express.static(path.join(frontend), {
+    setHeaders: (res: express.Response, filePath: string) => {
+        if (filePath.endsWith('.js')) {
+            res.set('Content-Type', 'application/javascript');
+        } else if (filePath.endsWith('.mjs')) {
+            res.set('Content-Type', 'application/javascript');
+        }
+    }
+}));
 gameState.generateQuestion();
 
 webSocket(httpServer)

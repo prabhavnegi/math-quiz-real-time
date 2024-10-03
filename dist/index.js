@@ -13,7 +13,16 @@ const frontend = path_1.default.join(__dirname, '..', 'math-quiz-real-time-front
 const PORT = process.env.PORT || 3000;
 const httpServer = (0, http_1.createServer)(app);
 app.use(express_1.default.json());
-app.use(express_1.default.static(frontend));
+app.use(express_1.default.static(path_1.default.join(frontend), {
+    setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.js')) {
+            res.set('Content-Type', 'application/javascript');
+        }
+        else if (filePath.endsWith('.mjs')) {
+            res.set('Content-Type', 'application/javascript');
+        }
+    }
+}));
 gameState_1.gameState.generateQuestion();
 (0, socket_1.webSocket)(httpServer);
 app.get('*', (req, res) => {
