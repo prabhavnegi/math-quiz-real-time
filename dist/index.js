@@ -10,10 +10,10 @@ const gameState_1 = require("./utils/gameState");
 const socket_1 = require("./socket");
 const app = (0, express_1.default)();
 const frontend = path_1.default.join(__dirname, '..', 'math-quiz-real-time-frontend', 'dist');
-app.use(express_1.default.static(frontend));
 const PORT = process.env.PORT || 3000;
 const httpServer = (0, http_1.createServer)(app);
 app.use(express_1.default.json());
+app.use(express_1.default.static(frontend));
 gameState_1.gameState.generateQuestion();
 (0, socket_1.webSocket)(httpServer);
 app.get('*', (req, res) => {

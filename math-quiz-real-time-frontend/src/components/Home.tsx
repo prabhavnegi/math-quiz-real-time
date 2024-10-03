@@ -63,7 +63,7 @@ export const Home: React.FC<Props> = ({currUser}) => {
                     },2000)
             });
         } else {
-            console.error("Socket is not initialized.");
+            console.error("Socket is not initialized");
         }
     };
 
