@@ -25,7 +25,8 @@ const webSocket = (httpServer) => {
     io = new socket_io_1.Server(httpServer, {
         cors: {
             origin: 'https://math-quiz-real-time.onrender.com',
-            credentials: true
+            methods: ['GET', 'POST'],
+            credentials: true,
         },
     });
     io.on('connect_error', (error) => {
