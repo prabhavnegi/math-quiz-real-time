@@ -46,7 +46,6 @@ coverage/
 /math-quiz-real-time-frontend/lerna-debug.log*
 
 /math-quiz-real-time-frontend/node_modules
-/math-quiz-real-time-frontend/dist-ssr
 /math-quiz-real-time-frontend/*.local
 
 # Editor directories and files
