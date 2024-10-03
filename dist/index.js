@@ -13,23 +13,23 @@ const frontend = path_1.default.join(__dirname, '..', 'math-quiz-real-time-front
 const PORT = process.env.PORT || 3000;
 const httpServer = (0, http_1.createServer)(app);
 app.use(express_1.default.json());
-app.use(express_1.default.static(path_1.default.join(frontend), {
+app.use(express_1.default.static(frontend, {
     setHeaders: (res, filePath) => {
         if (filePath.endsWith('.js')) {
-            res.set('Content-Type', 'application/javascript');
+            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
         }
-        else if (filePath.endsWith('.mjs')) {
-            res.set('Content-Type', 'application/javascript');
+        else if (filePath.endsWith('.css')) {
+            res.setHeader('Content-Type', 'text/css; charset=utf-8');
         }
     }
 }));
 gameState_1.gameState.generateQuestion();
 (0, socket_1.webSocket)(httpServer);
-app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(frontend, "index.html"));
-});
 app.get('/check-server-status', (req, res) => {
     res.send('Server is running');
+});
+app.get('*', (req, res) => {
+    res.sendFile(path_1.default.join(frontend, "index.html"));
 });
 httpServer.on('error', (error) => {
     console.error('HTTP Server error:', error);

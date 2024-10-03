@@ -11,12 +11,12 @@ const PORT = process.env.PORT || 3000;
 const httpServer = createServer(app);
 
 app.use(express.json());
-app.use(express.static(path.join(frontend), {
-    setHeaders: (res: express.Response, filePath: string) => {
+app.use(express.static(frontend, {
+    setHeaders: (res, filePath) => {
         if (filePath.endsWith('.js')) {
-            res.set('Content-Type', 'application/javascript');
-        } else if (filePath.endsWith('.mjs')) {
-            res.set('Content-Type', 'application/javascript');
+            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+        } else if (filePath.endsWith('.css')) {
+            res.setHeader('Content-Type', 'text/css; charset=utf-8');
         }
     }
 }));
@@ -24,12 +24,12 @@ gameState.generateQuestion();
 
 webSocket(httpServer)
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(frontend, "index.html"));
-});
-
 app.get('/check-server-status', (req, res) => {
     res.send('Server is running');
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(frontend, "index.html"));
 });
 
 httpServer.on('error', (error) => {
