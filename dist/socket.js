@@ -16,9 +16,15 @@ const gameState_1 = require("./utils/gameState");
 const evaluateWinner_1 = require("./utils/evaluateWinner");
 let io;
 const webSocket = (httpServer) => {
+    // io = new Server(httpServer, {
+    //     cors: {
+    //         origin: "http://localhost:5173",
+    //         credentials: true
+    //     },
+    // });
     io = new socket_io_1.Server(httpServer, {
         cors: {
-            origin: "http://localhost:5173",
+            origin: 'https://math-quiz-real-time.onrender.com',
             credentials: true
         },
     });

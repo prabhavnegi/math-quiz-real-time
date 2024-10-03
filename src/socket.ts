@@ -8,9 +8,15 @@ let io : Server;
 
 export const webSocket = (httpServer: HTTPServer) => {
     
+    // io = new Server(httpServer, {
+    //     cors: {
+    //         origin: "http://localhost:5173",
+    //         credentials: true
+    //     },
+    // });
     io = new Server(httpServer, {
         cors: {
-            origin: "http://localhost:5173",
+            origin: 'https://math-quiz-real-time.onrender.com',
             credentials: true
         },
     });
