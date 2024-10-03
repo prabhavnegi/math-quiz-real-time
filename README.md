@@ -6,7 +6,7 @@ Welcome to the Math Quiz Real Time project! This project allows multiple users t
 
 You can view the live demo of the application at the following link:
 
-[Live Demo](https://math-quiz-real-time.onrender.com)
+[Live Demo](https://dainty-entremet-ae4b53.netlify.app/)
 
 ## Features
 
