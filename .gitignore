@@ -25,6 +25,8 @@ Thumbs.db
 *.sublime-workspace
 *.sublime-project
 
+dist/
+
 # Optional npm cache directory
 .npm/
 
